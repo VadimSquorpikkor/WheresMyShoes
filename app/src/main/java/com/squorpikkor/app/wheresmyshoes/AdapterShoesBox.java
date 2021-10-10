@@ -30,7 +30,7 @@ public class AdapterShoesBox extends RecyclerView.Adapter<AdapterShoesBox.ShoesB
         void onItemClick(int position);
     }
 
-    public void setOnDeviceClickListener(OnDeviceClickListener onDeviceClickListener) {
+    public void setOnObjectClickListener(OnDeviceClickListener onDeviceClickListener) {
         this.onDeviceClickListener = onDeviceClickListener;
     }
 
@@ -56,7 +56,7 @@ public class AdapterShoesBox extends RecyclerView.Adapter<AdapterShoesBox.ShoesB
     public void onBindViewHolder(@NonNull ShoesBoxHolder holder, int position) {
         ShoesBox shoesBox = list.get(position);
         holder.img.setImageResource(shoesBox.getImageResId());
-        holder.name.setText("№"+shoesBox.getBoxNumber());
+//        holder.name.setText("№"+shoesBox.getBoxNumber());
     }
 
     @Override
@@ -67,13 +67,13 @@ public class AdapterShoesBox extends RecyclerView.Adapter<AdapterShoesBox.ShoesB
     public class ShoesBoxHolder extends RecyclerView.ViewHolder {
 
         ImageView img;
-        TextView name;
+//        TextView name;
 
         public ShoesBoxHolder(@NonNull View itemView) {
             super(itemView);
 
             img = itemView.findViewById(R.id.image);
-            name = itemView.findViewById(R.id.name);
+//            name = itemView.findViewById(R.id.name);
 
             itemView.setOnClickListener(view -> {
                 if (onDeviceClickListener != null) onDeviceClickListener.onDeviceClick(list.get(getAdapterPosition()));
